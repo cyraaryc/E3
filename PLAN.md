@@ -12,11 +12,9 @@
 - The second image is a drawn necklace, placed on the neckline.
 - explored and hat and necklace were both added
 
-## C
+## C - GRADIENT WITH SMILE
 
-- A gradient shading the head from light grey to dark black.
-- A bezier curve drawing a smile.
-- explored and both of these were done exactly as I expected
+- This one was the most natrual because it didn't have a halo or weird accessories. I think the curve of the smile makes this one the most natural
 
 ## Criterion
 
