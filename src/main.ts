@@ -61,6 +61,16 @@ face.append(mouth);
 
 portrait.append(face);
 
+for (let i = 0; i < 151; i++) {
+  const angle = (i / 121) * Math.PI * 2;
+  const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+  dot.setAttribute("cx", String(100 + 80 * Math.cos(angle)));
+  dot.setAttribute("cy", String(30 + 20 * Math.sin(angle)));
+  dot.setAttribute("r", "3");
+  dot.setAttribute("fill", "#563b67");
+  face.append(dot);
+}
+
 spin.addEventListener("click", () => {
   // Restart rather than accumulate simultaneous animations on repeated clicks.
   for (const animation of face.getAnimations()) animation.cancel();

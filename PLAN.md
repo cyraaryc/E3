@@ -2,8 +2,8 @@
 
 ## A
 
-- A face made 150 bead-like circles forming the head
-- A straight line represents the mouth, giving a neutral expression.
+- A halo made 150 bead-like circles forming around the head
+- Give appearance of angelic figure
 
 ## B
 
