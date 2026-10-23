@@ -2,8 +2,10 @@ const portrait = document.querySelector<HTMLDivElement>("#portrait")!;
 const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 // @deno-types="./asset-url.d.ts"
 import hatURL from "./assets/hat.png?no-inline";
+// made in piskel by me
 // @deno-types="./asset-url.d.ts"
 import necklaceURL from "./assets/necklace.png?no-inline";
+// made in piskle by me
 
 // The prototype grew inline. Keep it this way until the refactoring checkpoint.
 const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
