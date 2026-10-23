@@ -2,11 +2,35 @@ const portrait = document.querySelector<HTMLDivElement>("#portrait")!;
 const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 
 function buildFace() {
+  // The prototype grew inline. Keep it this way until the refactoring checkpoint.
   const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   face.setAttribute("viewBox", "0 0 200 200");
   face.setAttribute("role", "img");
   face.setAttribute("aria-label", "A neutral face");
+  const faceShade = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "linearGradient",
+  );
+  faceShade.setAttribute("id", "faceShade");
+  faceShade.setAttribute("x1", "0%");
+  faceShade.setAttribute("y1", "0%");
+  faceShade.setAttribute("x2", "100%");
+  faceShade.setAttribute("y2", "100%");
+  const gradStop = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "stop",
+  );
+  gradStop.setAttribute("offset", "0%");
+  gradStop.setAttribute("stop-color", "#000000");
 
+  const gradStop2 = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "stop",
+  );
+  gradStop2.setAttribute("offset", "100%");
+  gradStop2.setAttribute("stop-color", "#D3D3D3");
+  faceShade.append(gradStop, gradStop2);
+  face.append(faceShade);
   const head = document.createElementNS(
     "http://www.w3.org/2000/svg",
     "ellipse",
@@ -15,11 +39,10 @@ function buildFace() {
   head.setAttribute("cy", "100");
   head.setAttribute("rx", "78");
   head.setAttribute("ry", "86");
-  head.setAttribute("fill", "#f3cf87");
+  head.setAttribute("fill", "url(#faceShade)");
   head.setAttribute("stroke", "#302c29");
   head.setAttribute("stroke-width", "4");
   face.append(head);
-
   const leftEye = document.createElementNS(
     "http://www.w3.org/2000/svg",
     "ellipse",
@@ -51,12 +74,9 @@ function buildFace() {
   nose.setAttribute("stroke-width", "4");
   nose.setAttribute("stroke-linecap", "round");
   face.append(nose);
-
-  const mouth = document.createElementNS("http://www.w3.org/2000/svg", "line");
-  mouth.setAttribute("x1", "75");
-  mouth.setAttribute("y1", "137");
-  mouth.setAttribute("x2", "125");
-  mouth.setAttribute("y2", "137");
+  const mouth = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  mouth.setAttribute("d", "M 70 130 Q 100 155 130 130");
+  mouth.setAttribute("fill", "none");
   mouth.setAttribute("stroke", "#302c29");
   mouth.setAttribute("stroke-width", "4");
   mouth.setAttribute("stroke-linecap", "round");
