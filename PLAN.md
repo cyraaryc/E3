@@ -8,7 +8,7 @@
 ## B
 
 - The fist image is a drawn hat, placed on the head.
-- The second image is a drawn necklace, placed on the neckline.
+- The second image is a drawn necklace, placed on the neck area.
 
 ## C
 

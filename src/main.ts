@@ -1,12 +1,25 @@
 const portrait = document.querySelector<HTMLDivElement>("#portrait")!;
 const spin = document.querySelector<HTMLButtonElement>("#spin")!;
+// @deno-types="./asset-url.d.ts"
+import hatURL from "./assets/hat.png?no-inline";
+// @deno-types="./asset-url.d.ts"
+import necklaceURL from "./assets/necklace.png?no-inline";
 
 // The prototype grew inline. Keep it this way until the refactoring checkpoint.
 const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 face.setAttribute("viewBox", "0 0 200 200");
 face.setAttribute("role", "img");
 face.setAttribute("aria-label", "A neutral face");
-
+const necklace = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "image",
+);
+necklace.setAttribute("href", necklaceURL);
+necklace.setAttribute("x", "15 ");
+necklace.setAttribute("y", "110");
+necklace.setAttribute("width", "168");
+necklace.setAttribute("height", "168");
+face.append(necklace);
 const head = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 head.setAttribute("cx", "100");
 head.setAttribute("cy", "100");
@@ -38,6 +51,14 @@ rightEye.setAttribute("rx", "6");
 rightEye.setAttribute("ry", "9");
 rightEye.setAttribute("fill", "#302c29");
 face.append(rightEye);
+
+const hat = document.createElementNS("http://www.w3.org/2000/svg", "image");
+hat.setAttribute("href", hatURL);
+hat.setAttribute("x", "30");
+hat.setAttribute("y", "-50");
+hat.setAttribute("width", "128");
+hat.setAttribute("height", "128");
+face.append(hat);
 
 const nose = document.createElementNS("http://www.w3.org/2000/svg", "line");
 nose.setAttribute("x1", "100");
